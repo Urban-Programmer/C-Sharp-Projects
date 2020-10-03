@@ -10,6 +10,8 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
+            /* This Program allows to the user to perform simple integer calculations */
+
             Console.WriteLine("/**** Simple Calculator ****/ ");
 
             Console.WriteLine("Enter Number 1: ");
@@ -19,27 +21,39 @@ namespace Calculator
             int number2 = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Press 1 to Add, 2 to Subtract, 3 to Mulitply, 4 to Subtract");
-            if (Console.ReadLine() == "1")
-            {
-                Console.WriteLine(number1 + " + " + number2 + " = " + (number1 + number2));
+
+            Boolean menuContinue = true; 
+            while (menuContinue) {
+                if (Console.ReadLine() == "1")
+                {
+                    Console.WriteLine(number1 + " + " + number2 + " = " + (number1 + number2));
+                    break;
+                }
+                else if (Console.ReadLine() == "2")
+                {
+                    Console.WriteLine(number1 + " - " + number2 + " = " + (number1 - number2));
+                    break;
+                }
+                else if (Console.ReadLine() == "3")
+                {
+                    Console.WriteLine(number1 + " * " + number2 + " = " + (number1 * number2));
+                    break;
+                }
+                else if (Console.ReadLine() == "4")
+                {
+                    Console.WriteLine(number1 + " / " + number2 + " = " + (number1 / number2));
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Not a valid choice");
+                    break;
+                }       
             }
-            else if (Console.ReadLine() == "2")
-            {
-                Console.WriteLine(number1 + " - " + number2 + " = " + (number1 - number2));
-            }
-            else if (Console.ReadLine() == "3")
-            {
-                Console.WriteLine(number1 + " * " + number2 + " = " + (number1 * number2));
-            }
-            else if (Console.ReadLine() == "4")
-            {
-                Console.WriteLine(number1 + " / " + number2 + " = " + (number1 / number2));
-            }
-            else
-            {
-                Console.WriteLine("Not a valid choice");
-            }
+            menuContinue = false;
             Console.ReadLine();
+
+
 
 
         }
